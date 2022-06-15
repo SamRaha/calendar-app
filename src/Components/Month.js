@@ -7,22 +7,17 @@ import { useContext } from 'react';
 
 function Month(props) {
 	const state = useContext(Context);
-
 	let dayDisplay = [];
-	function displayBanner(item) {
-		state.setBannerDisplay(
-			<p>
-				{item.month} {item.day} {item.weather}
-			</p>
-		);
-	}
+
 	props.value.forEach((item) => {
 		dayDisplay.push(
 			<div
 				className='month__container__day-container__day'
 				key={item.day}
 				onClick={() => {
-					displayBanner(item);
+					state.setBannerDate(item.day);
+					state.setBannerMonth(item.month);
+					state.setBannerWeather(item.weather);
 				}}
 			>
 				<img src={item.weather === 'rainy' ? rain : sun} alt='rain' />
@@ -30,41 +25,11 @@ function Month(props) {
 			</div>
 		);
 	});
+
 	return (
 		<div className='month'>
 			<h4 className='month__title'>
-				{(() => {
-					if (props.value[0]) {
-						switch (props.value[0].month) {
-							case 1:
-								return 'January';
-							case 2:
-								return 'February';
-							case 3:
-								return 'March';
-							case 4:
-								return 'April';
-							case 5:
-								return 'May';
-							case 6:
-								return 'June';
-							case 7:
-								return 'July';
-							case 8:
-								return 'August';
-							case 9:
-								return 'September';
-							case 10:
-								return 'October';
-							case 11:
-								return 'November';
-							case 12:
-								return 'December';
-							default:
-								return 'Month';
-						}
-					}
-				})()}
+				{props.value[0] ? state.matchNumberToMonth(props.value[0].month) : ''}
 			</h4>
 			<div className='month__container'>
 				<div className='month__container__day-labels'>

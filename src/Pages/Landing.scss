@@ -1,7 +1,40 @@
 @import '../variables.scss';
 .landing {
 	width: 100%;
-	max-width: 1600px;
-	@include flexCenter(row);
-	flex-wrap: wrap;
+	height: 100%;
+	&__calendar {
+		width: 100%;
+		max-width: 1600px;
+		@include flexCenter(row);
+		flex-wrap: wrap;
+	}
+	&__banner {
+		width: 600px;
+		position: relative;
+		margin: auto;
+		height: 100px;
+		@include flexCenter(row);
+		justify-content: flex-start;
+		background-color: rgb(49, 49, 49);
+		color: white;
+		&__cross {
+			position: absolute;
+			top: 45%;
+			right: 7%;
+			transform: translate(50%, -50%);
+			p {
+				font-size: 40px;
+			}
+		}
+		h2 {
+			flex: 1;
+			text-align: left;
+			margin-left: 20px;
+		}
+		img {
+			background-color: white;
+			width: 70px;
+			margin-left: 20px;
+		}
+	}
 }
