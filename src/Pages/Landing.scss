@@ -1,0 +1,7 @@
+@import '../variables.scss';
+.landing {
+	width: 100%;
+	max-width: 1600px;
+	@include flexCenter(row);
+	flex-wrap: wrap;
+}

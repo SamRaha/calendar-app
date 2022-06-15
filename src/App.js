@@ -1,0 +1,17 @@
+import './App.scss';
+import React, { useState } from 'react';
+import useMockWeatherData from './hooks/useMockWeatherData';
+import Landing from './Pages/Landing';
+import { ContextProvider } from './state/GlobalContext';
+function App() {
+	const weatherData = useMockWeatherData(2022);
+	return (
+		<div className='App'>
+			<ContextProvider>
+				<Landing weatherData={weatherData} />
+			</ContextProvider>
+		</div>
+	);
+}
+
+export default App;
