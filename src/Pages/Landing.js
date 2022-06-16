@@ -1,11 +1,9 @@
-import { getByDisplayValue } from '@testing-library/react';
-import React, { useState } from 'react';
-import Month from '../Components/Month';
-import './Landing.scss';
-import Context from '../state/GlobalContext';
-import { useContext } from 'react';
+import { useContext, useState } from 'react';
 import rain from '../assets/rain.png';
 import sun from '../assets/sun.png';
+import Month from '../Components/Month';
+import Context from '../state/GlobalContext';
+import './Landing.scss';
 
 function Landing({ weatherData }) {
 	const state = useContext(Context);
@@ -49,7 +47,6 @@ function Landing({ weatherData }) {
 					className='landing__banner__cross'
 					onClick={() => {
 						state.setBannerDisplayNone(true);
-						console.log(state.bannerDisplayNone);
 					}}
 				>
 					<p>x</p>
