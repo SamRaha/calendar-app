@@ -16,12 +16,15 @@ function Day({ item }) {
 					: ``
 			}`}
 			key={item.day}
+			//when the mouse enters, you set the classname for changing the opacity of the other weather types to 0.5
 			onMouseEnter={() => {
 				state.setRecede(item.weather);
 			}}
+			//reset when mouse leaves
 			onMouseLeave={() => {
 				state.setRecede(null);
 			}}
+			//when clicked, it sets the banner UI to show, and passes the relevant information to it.
 			onClick={() => {
 				state.setBannerDate(item.day);
 				state.setBannerMonth(item.month);

@@ -36,7 +36,7 @@ function Landing({ weatherData }) {
 		});
 	//loop through the monthArray and add a month UI component with props passed down to it
 	Object.keys(monthArray).forEach((item, index) => {
-		display.push(<Month value={monthArray[item]} key={index} />);
+		display.push(<Month monthArray={monthArray[item]} key={index} />);
 	});
 
 	return (
@@ -45,6 +45,7 @@ function Landing({ weatherData }) {
 			<div className={`landing__banner ${state.bannerDisplayNone ? `display-none` : ``}`}>
 				<div
 					className='landing__banner__cross'
+					//when the x is clicked, it sets the banner to display none.
 					onClick={() => {
 						state.setBannerDisplayNone(true);
 					}}

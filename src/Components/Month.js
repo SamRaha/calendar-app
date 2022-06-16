@@ -3,22 +3,18 @@ import Context from '../state/GlobalContext';
 import Day from './Day';
 import './Month.scss';
 
-function Month(props) {
+function Month({ monthArray }) {
 	const state = useContext(Context);
 	let dayDisplay = [];
-
-	props.value.forEach((item) => {
-		dayDisplay.push(
-			<div>
-				<Day item={item} />{' '}
-			</div>
-		);
+	//loop through the monthArray and for each day, produce a day component with the item data passed onto it.
+	monthArray.forEach((item) => {
+		dayDisplay.push(<Day key={item.day} item={item} />);
 	});
 
 	return (
 		<div className='month'>
 			<h4 className='month__title'>
-				{props.value[0] ? state.matchNumberToMonth(props.value[0].month) : ''}
+				{monthArray[0] ? state.matchNumberToMonth(monthArray[0].month) : ''}
 			</h4>
 			<div className='month__container'>
 				<div className='month__container__day-labels'>
