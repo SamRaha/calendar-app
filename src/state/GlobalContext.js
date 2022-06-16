@@ -4,9 +4,10 @@ export function ContextProvider({ children }) {
 	const [bannerDate, setBannerDate] = useState([]);
 	const [bannerMonth, setBannerMonth] = useState([]);
 	const [bannerWeather, setBannerWeather] = useState([]);
+	const [bannerDisplayNone, setBannerDisplayNone] = useState(true);
+	const [recede, setRecede] = useState(null);
 
 	function matchNumberToMonth(number) {
-		console.log(number);
 		switch (number) {
 			case 1:
 				return 'January';
@@ -47,6 +48,10 @@ export function ContextProvider({ children }) {
 				bannerWeather,
 				setBannerWeather,
 				matchNumberToMonth,
+				bannerDisplayNone,
+				setBannerDisplayNone,
+				recede,
+				setRecede,
 			}}
 		>
 			{children}

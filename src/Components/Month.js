@@ -12,12 +12,25 @@ function Month(props) {
 	props.value.forEach((item) => {
 		dayDisplay.push(
 			<div
-				className='month__container__day-container__day'
+				className={`month__container__day-container__day ${
+					state.recede === 'sunny' && item.weather === 'rainy'
+						? `recede`
+						: state.recede === 'rainy' && item.weather === 'sunny'
+						? `recede`
+						: ``
+				}`}
 				key={item.day}
+				onMouseEnter={() => {
+					state.setRecede(item.weather);
+				}}
+				onMouseLeave={() => {
+					state.setRecede(null);
+				}}
 				onClick={() => {
 					state.setBannerDate(item.day);
 					state.setBannerMonth(item.month);
 					state.setBannerWeather(item.weather);
+					state.setBannerDisplayNone(false);
 				}}
 			>
 				<img src={item.weather === 'rainy' ? rain : sun} alt='rain' />

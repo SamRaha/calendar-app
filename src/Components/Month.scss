@@ -36,6 +36,10 @@
 				height: 40.285px;
 				border: 1px solid grey;
 				background-color: white;
+				&:hover {
+					box-shadow: inset 0 0px 0px 1.5px rgb(28, 161, 250) !important;
+				}
+
 				img {
 					width: 70%;
 					height: 70%;
@@ -52,4 +56,8 @@
 			}
 		}
 	}
+}
+
+.recede {
+	opacity: 0.5;
 }

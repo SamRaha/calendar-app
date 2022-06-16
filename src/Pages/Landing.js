@@ -9,7 +9,7 @@ import sun from '../assets/sun.png';
 
 function Landing({ weatherData }) {
 	const state = useContext(Context);
-	const [displayNone, setDisplayNone] = useState(false);
+	const [bannerDisplayNone, setBannerDisplayNone] = useState(true);
 	//create conditional UI display array
 	let display = [];
 	//create data array that has 12 months worth of data
@@ -36,23 +36,20 @@ function Landing({ weatherData }) {
 		weatherData.forEach((item) => {
 			monthArray[item.month].push(item);
 		});
-	// console.log("monthArray: ", monthArray);
 	//loop through the monthArray and add a month UI component with props passed down to it
 	Object.keys(monthArray).forEach((item, index) => {
 		display.push(<Month value={monthArray[item]} key={index} />);
 	});
-	// className={`button start-button ${
-	// 	mapStart || startButtonDisabled ? `button-disabled` : ``
-	// }`}
+
 	return (
 		<div className='landing'>
 			<div className='landing__calendar'>{display}</div>
-			<div className='landing__banner'>
+			<div className={`landing__banner ${state.bannerDisplayNone ? `display-none` : ``}`}>
 				<div
 					className='landing__banner__cross'
 					onClick={() => {
-						setDisplayNone(true);
-						console.log(displayNone);
+						state.setBannerDisplayNone(true);
+						console.log(state.bannerDisplayNone);
 					}}
 				>
 					<p>x</p>

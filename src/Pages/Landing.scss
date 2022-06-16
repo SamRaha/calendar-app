@@ -7,6 +7,7 @@
 		max-width: 1600px;
 		@include flexCenter(row);
 		flex-wrap: wrap;
+		margin: auto;
 	}
 	&__banner {
 		width: 600px;
@@ -37,4 +38,8 @@
 			margin-left: 20px;
 		}
 	}
+}
+
+.display-none {
+	display: none;
 }
