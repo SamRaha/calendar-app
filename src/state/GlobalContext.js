@@ -7,6 +7,7 @@ export function ContextProvider({ children }) {
 	const [bannerDisplayNone, setBannerDisplayNone] = useState(true);
 	const [recede, setRecede] = useState(null);
 
+	//function that takes in a number and outputs the coresponding month in string format. This is being used twice in my app on different files, and therefore made sense to put it on the global state.
 	function matchNumberToMonth(number) {
 		switch (number) {
 			case 1:

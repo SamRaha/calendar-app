@@ -4,6 +4,7 @@ import Landing from './Pages/Landing';
 import { ContextProvider } from './state/GlobalContext';
 
 function App() {
+	//pulling the weatherData using a hook.
 	const weatherData = useMockWeatherData(2021);
 	return (
 		<div className='App'>
