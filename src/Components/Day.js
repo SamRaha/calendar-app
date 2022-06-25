@@ -4,7 +4,7 @@ import sun from '../assets/sun.png';
 import Context from '../state/GlobalContext';
 import './Day.scss';
 
-function Day({ item }) {
+const Day = ({ item }) => {
 	const state = useContext(Context);
 	return (
 		<div
@@ -36,6 +36,6 @@ function Day({ item }) {
 			<div className='day-container__day__line'></div>
 		</div>
 	);
-}
+};
 
 export default Day;

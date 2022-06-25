@@ -1,6 +1,6 @@
 import { createContext, useState } from 'react';
 
-export function ContextProvider({ children }) {
+export const ContextProvider = ({ children }) => {
 	const [bannerDate, setBannerDate] = useState([]);
 	const [bannerMonth, setBannerMonth] = useState([]);
 	const [bannerWeather, setBannerWeather] = useState([]);
@@ -8,7 +8,7 @@ export function ContextProvider({ children }) {
 	const [recede, setRecede] = useState(null);
 
 	//function that takes in a number and outputs the coresponding month in string format. This is being used twice in my app on different files, and therefore made sense to put it on the global state.
-	function matchNumberToMonth(number) {
+	const matchNumberToMonth = (number) => {
 		switch (number) {
 			case 1:
 				return 'January';
@@ -37,7 +37,7 @@ export function ContextProvider({ children }) {
 			default:
 				return '';
 		}
-	}
+	};
 
 	return (
 		<Context.Provider
@@ -58,6 +58,6 @@ export function ContextProvider({ children }) {
 			{children}
 		</Context.Provider>
 	);
-}
+};
 const Context = createContext();
 export default Context;

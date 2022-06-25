@@ -5,7 +5,7 @@ import Month from '../Components/Month';
 import Context from '../state/GlobalContext';
 import './Landing.scss';
 
-function Landing({ weatherData }) {
+const Landing = ({ weatherData }) => {
 	const state = useContext(Context);
 	//create conditional UI display array
 	let display = [];
@@ -64,12 +64,12 @@ function Landing({ weatherData }) {
 					alt=''
 				/>
 				<h2>
-					{state.bannerDate}
+					{state.bannerDate}{' '}
 					{state.bannerMonth ? state.matchNumberToMonth(state.bannerMonth) : 0}
 				</h2>
 			</div>
 		</div>
 	);
-}
+};
 
 export default Landing;

@@ -3,7 +3,7 @@ import Context from '../state/GlobalContext';
 import Day from './Day';
 import './Month.scss';
 
-function Month({ monthArray }) {
+const Month = ({ monthArray }) => {
 	const state = useContext(Context);
 	let dayDisplay = [];
 	//loop through the monthArray and for each day, produce a day component with the item data passed onto it.
@@ -30,6 +30,6 @@ function Month({ monthArray }) {
 			</div>
 		</div>
 	);
-}
+};
 
 export default Month;

@@ -3,7 +3,7 @@ import useMockWeatherData from './hooks/useMockWeatherData';
 import Landing from './Pages/Landing';
 import { ContextProvider } from './state/GlobalContext';
 
-function App() {
+const App = () => {
 	//pulling the weatherData using a hook.
 	const weatherData = useMockWeatherData(2021);
 	return (
@@ -13,6 +13,6 @@ function App() {
 			</ContextProvider>
 		</div>
 	);
-}
+};
 
 export default App;
