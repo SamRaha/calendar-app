@@ -1,6 +1,8 @@
 import { createContext, useState } from 'react';
 
 export const ContextProvider = ({ children }) => {
+	const [banner, setBanner] = useState(null);
+
 	const [bannerDate, setBannerDate] = useState([]);
 	const [bannerMonth, setBannerMonth] = useState([]);
 	const [bannerWeather, setBannerWeather] = useState([]);
@@ -42,6 +44,8 @@ export const ContextProvider = ({ children }) => {
 	return (
 		<Context.Provider
 			value={{
+				banner,
+				setBanner,
 				bannerDate,
 				setBannerDate,
 				bannerMonth,

@@ -40,34 +40,40 @@ const Landing = ({ weatherData }) => {
 	Object.keys(monthArray).forEach((item, index) => {
 		display.push(<Month monthArray={monthArray[item]} key={index} />);
 	});
+	console.log('state.banner: ', state.banner);
 	return (
 		<div className='landing'>
 			<div className='landing__calendar'>{display}</div>
-			<div className={`landing__banner ${state.bannerDisplayNone ? `display-none` : ``}`}>
-				<div
-					className='landing__banner__cross'
-					//when the x is clicked, it sets the banner to display none.
-					onClick={() => {
-						state.setBannerDisplayNone(true);
-					}}
-				>
-					<p>x</p>
+
+			{state.banner ? (
+				<div className='landing__banner'>
+					<div
+						className='landing__banner__cross'
+						//when the x is clicked, it sets the banner to display none.
+						onClick={() => {
+							state.setBanner(null);
+						}}
+					>
+						<p>x</p>
+					</div>
+					<img
+						src={
+							state.banner.weather === 'rainy'
+								? rain
+								: state.banner.weather === 'sunny'
+								? sun
+								: ''
+						}
+						alt=''
+					/>
+					<h2>
+						{state.banner.day}{' '}
+						{state.banner.month ? state.matchNumberToMonth(state.banner.month) : 0}
+					</h2>
 				</div>
-				<img
-					src={
-						state.bannerWeather === 'rainy'
-							? rain
-							: state.bannerWeather === 'sunny'
-							? sun
-							: ''
-					}
-					alt=''
-				/>
-				<h2>
-					{state.bannerDate}{' '}
-					{state.bannerMonth ? state.matchNumberToMonth(state.bannerMonth) : 0}
-				</h2>
-			</div>
+			) : (
+				''
+			)}
 		</div>
 	);
 };

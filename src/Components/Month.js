@@ -12,7 +12,11 @@ const Month = ({ monthArray }) => {
 	});
 
 	return (
-		<div className='month'>
+		<div
+			className={`month ${
+				state.banner && state.banner.month === monthArray[0].month ? 'month--border' : ''
+			}`}
+		>
 			<h4 className='month__title'>
 				{monthArray[0] ? state.matchNumberToMonth(monthArray[0].month) : ''}
 			</h4>
