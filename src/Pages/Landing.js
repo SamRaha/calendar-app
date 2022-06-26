@@ -40,7 +40,7 @@ const Landing = ({ weatherData }) => {
 	Object.keys(monthArray).forEach((item, index) => {
 		display.push(<Month monthArray={monthArray[item]} key={index} />);
 	});
-	console.log('state.banner: ', state.banner);
+
 	return (
 		<div className='landing'>
 			<div className='landing__calendar'>{display}</div>
