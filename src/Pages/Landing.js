@@ -1,4 +1,4 @@
-import { useContext, useState } from 'react';
+import { useContext } from 'react';
 import rain from '../assets/rain.png';
 import sun from '../assets/sun.png';
 import Month from '../Components/Month';
