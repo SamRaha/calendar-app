@@ -26,12 +26,6 @@ const Day = ({ item }) => {
 			}}
 			//when clicked, it sets the banner UI to show, and passes the relevant information to it.
 			onClick={() => {
-				// state.setBannerDate(item.day);
-				// state.setBanner.month(item.month);
-				// state.setBanner.weather(item.weather);
-				// state.setBannerDisplayNone(false);
-
-				// state.setBanner.date(item.day)
 				state.setBanner(item);
 			}}
 		>
