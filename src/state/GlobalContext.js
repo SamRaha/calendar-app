@@ -2,11 +2,6 @@ import { createContext, useState } from 'react';
 
 export const ContextProvider = ({ children }) => {
 	const [banner, setBanner] = useState(null);
-
-	const [bannerDate, setBannerDate] = useState([]);
-	const [bannerMonth, setBannerMonth] = useState([]);
-	const [bannerWeather, setBannerWeather] = useState([]);
-	const [bannerDisplayNone, setBannerDisplayNone] = useState(true);
 	const [recede, setRecede] = useState(null);
 
 	//function that takes in a number and outputs the coresponding month in string format. This is being used twice in my app on different files, and therefore made sense to put it on the global state.
@@ -46,15 +41,7 @@ export const ContextProvider = ({ children }) => {
 			value={{
 				banner,
 				setBanner,
-				bannerDate,
-				setBannerDate,
-				bannerMonth,
-				setBannerMonth,
-				bannerWeather,
-				setBannerWeather,
 				matchNumberToMonth,
-				bannerDisplayNone,
-				setBannerDisplayNone,
 				recede,
 				setRecede,
 			}}
